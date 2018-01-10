@@ -10,11 +10,12 @@ import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { SignupPage } from '../pages/signup/signup';
 
 const firebaseAppConfig: FirebaseAppConfig = {
-  apiKey: "AIzaSyAzCRyq0dpqvCOSW53n1vZ04VnkzPUxiww",
-  authDomain: "bruno-chat.firebaseapp.com",
-  databaseURL: "https://bruno-chat.firebaseio.com",
-  storageBucket: "bruno-chat.appspot.com",
-  messagingSenderId: "761487959668"
+  apiKey: "AIzaSyBWUGmZj8rz2SI1cjJxeJaZT9KaVruAO7s",
+  authDomain: "meuchat-6bd4c.firebaseapp.com",
+  databaseURL: "https://meuchat-6bd4c.firebaseio.com",
+  projectId: "meuchat-6bd4c",
+  storageBucket: "",
+  messagingSenderId: "536344889305"
 };
 
 @NgModule({
