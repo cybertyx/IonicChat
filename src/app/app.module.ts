@@ -8,12 +8,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2'; 
 import { SignupPage } from '../pages/signup/signup';
+import { UserService } from './../providers/user/user.service';
+import { HttpModule } from '@angular/http';
+import { AuthProvider } from '../providers/auth/auth';
 
 const firebaseAppConfig: FirebaseAppConfig = {
   apiKey: "AIzaSyBWUGmZj8rz2SI1cjJxeJaZT9KaVruAO7s",
   authDomain: "meuchat-6bd4c.firebaseapp.com",
   databaseURL: "https://meuchat-6bd4c.firebaseio.com",
-  projectId: "meuchat-6bd4c",
   storageBucket: "",
   messagingSenderId: "536344889305"
 };
@@ -27,6 +29,7 @@ const firebaseAppConfig: FirebaseAppConfig = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule,
     AngularFireModule.initializeApp(firebaseAppConfig)
   ],
   bootstrap: [IonicApp],
@@ -38,7 +41,9 @@ const firebaseAppConfig: FirebaseAppConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserService,
+    AuthProvider
   ]
 })
 export class AppModule {}
